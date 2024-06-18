@@ -209,6 +209,7 @@
           app:layout_constraintTop_toBottomOf="@id/middle" />
 
       <androidx.appcompat.widget.AppCompatButton
+          android:theme="@style/Base.Theme.AppCompat"
           android:id="@+id/cta"
           android:layout_width="match_parent"
           android:layout_height="0dp"
