@@ -113,7 +113,7 @@ static NSString *const GADTBlue = @"#5C84F0";
 - (void)applyStyles {
   self.layer.borderColor =
       [GADTTemplateView colorFromHexString:@"E0E0E0"].CGColor;
-  self.layer.borderWidth = 1.0f;
+  self.layer.borderWidth = 0.0f;
   [self.mediaView sizeToFit];
   if ([self styleForKey:GADTNativeTemplateStyleKeyCornerRadius]) {
     float roundedCornerRadius =
@@ -154,14 +154,19 @@ static NSString *const GADTBlue = @"#5C84F0";
     ((UILabel *)self.headlineView).textColor = (UIColor *)[self
         styleForKey:GADTNativeTemplateStyleKeyPrimaryFontColor];
 
-  if ([self styleForKey:GADTNativeTemplateStyleKeySecondaryFontColor]) {
+  if ([self styleForKey:GADTNativeTemplateStyleKeyTertiaryFontColor]) {
     ((UILabel *)self.bodyView).textColor = (UIColor *)[self
+        styleForKey:GADTNativeTemplateStyleKeyTertiaryFontColor];
+  }
+
+  if ([self styleForKey:GADTNativeTemplateStyleKeySecondaryFontColor]) {
+    ((UILabel *)self.advertiserView).textColor = (UIColor *)[self
         styleForKey:GADTNativeTemplateStyleKeySecondaryFontColor];
   }
 
-  if ([self styleForKey:GADTNativeTemplateStyleKeyTertiaryFontColor]) {
-    ((UILabel *)self.advertiserView).textColor = (UIColor *)[self
-        styleForKey:GADTNativeTemplateStyleKeyTertiaryFontColor];
+  if ([self styleForKey:GADTNativeTemplateStyleKeySecondaryFontColor]) {
+      ((UILabel *)self.storeView).textColor = (UIColor *)[self
+        styleForKey:GADTNativeTemplateStyleKeySecondaryFontColor];
   }
 
   if ([self styleForKey:GADTNativeTemplateStyleKeyCallToActionFontColor]) {
